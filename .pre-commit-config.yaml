@@ -1,0 +1,17 @@
+---
+default_install_hook_types: [pre-commit, commit-msg]
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+  - id: no-commit-to-branch
+    args: [ '--pattern', '^(?!(feature|feat|fix)\/(E3APIT-[0-9]+)).*$' ]
+    stages:
+      - pre-commit
+- repo:  https://github.com/milin/giticket
+  rev: v1.4
+  hooks:
+  - id:  giticket
+    args: [ '--regex=E3APIT-[0-9]+', '--format=[{tickets}] {commit_msg}', '--mode=regex_match' ]
+    stages:
+      - commit-msg
