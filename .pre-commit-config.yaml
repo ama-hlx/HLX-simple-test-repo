@@ -1,14 +1,14 @@
 ---
 default_install_hook_types: [pre-commit, commit-msg]
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
+#- repo: https://github.com/pre-commit/pre-commit-hooks
+- repo: https://git.hub.vwgroup.com/CICD-Platform/pre-commit-hooks.git
   rev: v5.0.0
   hooks:
   - id: no-commit-to-branch
     args: [ '--pattern', '^(?!(feature|feat|fix)\/(E3APIT-[0-9]+)).*$' ]
-    stages:
-      - pre-commit
-- repo:  https://github.com/milin/giticket
+#- repo:  https://github.com/milin/giticket
+- repo: https://git.hub.vwgroup.com/CICD-Platform/giticket.git
   rev: v1.4
   hooks:
   - id:  giticket
